@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimización de Producción - Programación Lineal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="./prog-lineal.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Optimización de Producción</h1>
+        
+        <div id="input-section">
+            <h2>Función Objetivo</h2>
+            <label for="z1">Coeficiente de x:</label>
+            <input type="number" id="z1" value="">
+            <label for="z2">Coeficiente de y:</label>
+            <input type="number" id="z2" value="">
+            
+            <h2>Restricciones</h2>
+            <div id="restrictions">
+                <div class="restriction">
+                    <label for="a1">A:</label>
+                    <input type="number" class="a" value="">
+                    <label for="b1">B:</label>
+                    <input type="number" class="b" value="">
+                    <label for="c1">C:</label>
+                    <input type="number" class="c" value="">
+                    <button onclick="removeRestriction(this)">Eliminar</button>
+                </div>
+                <div class="restriction">
+                    <label for="a2">A:</label>
+                    <input type="number" class="a" value="">
+                    <label for="b2">B:</label>
+                    <input type="number" class="b" value="">
+                    <label for="c2">C:</label>
+                    <input type="number" class="c" value="">
+                    <button onclick="removeRestriction(this)">Eliminar</button>
+                </div>
+            </div>
+            
+            <button onclick="addRestriction()">Agregar Restricción</button>
+            <button onclick="clearRestrictions()">Borrar Todas las Restricciones</button>
+            <button onclick="calculate()">Calcular y Graficar</button>
+            <button onclick="reset()">Reiniciar</button>
+        </div>
+        
+        <div id="result">
+            <h2>Resultados</h2>
+            <div id="optimal-solution"></div>
+        </div>
+
+        <div id="graph"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
